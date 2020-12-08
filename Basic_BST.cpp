@@ -47,6 +47,34 @@ void search(Node* head, int data)
     else    return search(head->right, data);
 }
 
+int findMin(Node* head)
+{
+    if(head==NULL)
+    {
+        cout <<"ERROR: TREE is EMPTY\n";
+        return -1;
+    }
+    else if(head->left == NULL)
+    {
+        return head->data;
+    }
+    return findMin(head->left);
+}
+
+int findMax(Node* head)
+{
+    if(head == NULL)
+    {
+        cout << "ERROR: Tree is empty\n";
+        return -1;
+    }
+    else if(head->right == NULL)
+    {
+        return head->data;
+    }
+    return findMax(head->right);
+}
+
 void printInOrder(Node* head)
 {
     if(head ==NULL)
