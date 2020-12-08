@@ -39,6 +39,14 @@ Node* insert(Node* head, int data)
     return head;
 }
 
+void search(Node* head, int data)
+{
+    if(head == NULL)    return false;
+    else if(head->data == data)     return true;
+    else if(data<=head->data)   return search(head->left, data);
+    else    return search(head->right, data);
+}
+
 void printInOrder(Node* head)
 {
     if(head ==NULL)
@@ -61,5 +69,9 @@ int main()
         insert(head, val);
     }
     printInOrder(head);
+    int number;
+    cin>>number;
+    if(search(head,number)==true)   cout<<"Found\n";
+    else    cout<<"Not Found\n";
     return 0;
 }
