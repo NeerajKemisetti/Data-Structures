@@ -51,6 +51,8 @@ void Preorder(Node* root)
     Preorder(root->right);
 } 
 
+//INORDER DFT
+
 void Inorder(Node* root)
 {
     if(root == NULL)   return;
@@ -58,6 +60,8 @@ void Inorder(Node* root)
     cout << root->data <<" ";
     Inorder(root->right);
 }
+
+// POSTORDER DFT
 
 void Postorder(Node* root)
 {
