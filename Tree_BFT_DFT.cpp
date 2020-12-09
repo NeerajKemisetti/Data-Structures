@@ -71,6 +71,15 @@ void Postorder(Node* root)
     cout << root->data << " ";
 }
 
+int FindHeight(Node* root)
+{
+    if(root == NULL)
+        return -1;
+    int left = FindHeight(root->left);
+    int right = FindHeight(root->right);
+    return (left<right)? right+1: left+1;
+   //return max(left,right)+1;
+}
 
 void printInOrder(Node* head)
 {
@@ -84,7 +93,7 @@ void printInOrder(Node* head)
 
 int main()
 {
-    int N;
+    int N,h;
     char val;
     cin>>N;
     cin>>val;
@@ -98,5 +107,7 @@ int main()
     printInOrder(root);
     cout<<'\n';
     LevelOrder(root);
+    h = FindHeight(root);
+    cout << "\n"<<h<<"\n";
     return 0;
 }
